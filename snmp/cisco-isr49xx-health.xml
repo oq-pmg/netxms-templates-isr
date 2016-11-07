@@ -7,7 +7,7 @@
 	<templates>
 		<template id="1758">
 			<guid>aeb71392-ef04-4ada-8eaf-49ca0cf2679a</guid>
-			<name>cisco-isr-health</name>
+			<name>cisco-isr44xx-health</name>
 			<flags>3</flags>
 			<path>
 				<element id="1">snmp</element>
