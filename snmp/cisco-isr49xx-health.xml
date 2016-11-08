@@ -33,28 +33,7 @@
 					<transformation></transformation>
 					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
 					<instanceDiscoveryData>.1.3.6.1.4.1.9.9.109.1.1.1.1.2</instanceDiscoveryData>
-					<instanceFilter>snmp = CreateSNMPTransport($node);&#x0D;&#x0A;trace(0,&quot;CPU load instance discovery for &quot;.$node-&gt;name);&#x0D;&#x0A;if (snmp == NULL) {&#x0D;&#x0A;&#x09;trace(0,&quot;Err Can&apos;t create snmp transport at &quot;.$node-&gt;name);&#x0D;&#x0A;} else {&#x0D;&#x0A;   trace(0,&quot;Index ID is &quot;.$1);&#x0D;&#x0A;&#x09;instanceID = SNMPGetValue(snmp,&quot;.1.3.6.1.4.1.9.9.109.1.1.1.1.2.&quot; . $1);&#x0D;&#x0A;&#x09;trace(0,&quot;Instance ID is &quot;.instanceID);&#x0D;&#x0A;&#x09;instanceName = SNMPGetValue(snmp,&quot;.1.3.6.1.2.1.47.1.1.1.1.7.&quot; . instanceID);&#x0D;&#x0A;&#x09;trace(0,&quot;Instance Name is &quot;.instanceName);&#x0D;&#x0A;&#x09;if(instanceName != NULL &amp;&amp; typeof(instanceName)==&quot;string&quot;)&#x0D;&#x0A;&#x09;{&#x0D;&#x0A;&#x09;&#x09;&#x09;return %(TRUE, $1, instanceName);&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;}&#x0D;&#x0A;return FALSE;</instanceFilter>
-				</dci>
-				<dci id="910">
-					<guid>822800e5-3ebe-4715-b023-c8e35da7a85a</guid>
-					<name>1.3.6.1.4.1.9.9.48.1.1.1.5.1</name>
-					<description>Memory utilization (RAM), %</description>
-					<dataType>0</dataType>
-					<samples>0</samples>
-					<origin>2</origin>
-					<interval>0</interval>
-					<retention>0</retention>
-					<instance></instance>
-					<systemTag></systemTag>
-					<delta>0</delta>
-					<flags>0</flags>
-					<snmpRawValueType>0</snmpRawValueType>
-					<snmpPort>0</snmpPort>
-					<instanceDiscoveryMethod>0</instanceDiscoveryMethod>
-					<transformation>($1 / 765187668) * 100</transformation>
-					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
-					<instanceDiscoveryData></instanceDiscoveryData>
-					<instanceFilter></instanceFilter>
+					<instanceFilter>snmp = CreateSNMPTransport($node);&#x0D;&#x0A;if (snmp == NULL) {&#x0D;&#x0A;&#x09;trace(0,&quot;Err Can&apos;t create snmp transport at &quot;.$node-&gt;name);&#x0D;&#x0A;} else {&#x0D;&#x0A;&#x09;instanceID = SNMPGetValue(snmp,&quot;.1.3.6.1.4.1.9.9.109.1.1.1.1.2.&quot; . $1);&#x0D;&#x0A;&#x09;instanceName = SNMPGetValue(snmp,&quot;.1.3.6.1.2.1.47.1.1.1.1.7.&quot; . instanceID);&#x0D;&#x0A;&#x09;if(instanceName != NULL &amp;&amp; typeof(instanceName)==&quot;string&quot;)&#x0D;&#x0A;&#x09;{&#x0D;&#x0A;&#x09;&#x09;&#x09;return %(TRUE, $1, instanceName);&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;}&#x0D;&#x0A;return FALSE;</instanceFilter>
 				</dci>
 				<dci id="911">
 					<guid>1abb936d-e9aa-4353-8f8f-3b5ac546f94f</guid>
@@ -97,6 +76,69 @@
 					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
 					<instanceDiscoveryData></instanceDiscoveryData>
 					<instanceFilter></instanceFilter>
+				</dci>
+				<dci id="910">
+					<guid>822800e5-3ebe-4715-b023-c8e35da7a85a</guid>
+					<name>1.3.6.1.4.1.9.9.48.1.1.1.5.1</name>
+					<description>Memory utilization (RAM), %</description>
+					<dataType>0</dataType>
+					<samples>0</samples>
+					<origin>2</origin>
+					<interval>0</interval>
+					<retention>0</retention>
+					<instance></instance>
+					<systemTag></systemTag>
+					<delta>0</delta>
+					<flags>0</flags>
+					<snmpRawValueType>0</snmpRawValueType>
+					<snmpPort>0</snmpPort>
+					<instanceDiscoveryMethod>0</instanceDiscoveryMethod>
+					<transformation>($1 / 765187668) * 100</transformation>
+					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
+					<instanceDiscoveryData></instanceDiscoveryData>
+					<instanceFilter></instanceFilter>
+				</dci>
+				<dci id="1875">
+					<guid>c6239e0b-fdf8-4a00-91e4-c810effc66f3</guid>
+					<name>.1.3.6.1.4.1.9.9.10.1.1.4.1.1.14.1.{instance}</name>
+					<description>Disk space available ({instance-name}), b</description>
+					<dataType>3</dataType>
+					<samples>0</samples>
+					<origin>2</origin>
+					<interval>0</interval>
+					<retention>0</retention>
+					<instance></instance>
+					<systemTag></systemTag>
+					<delta>0</delta>
+					<flags>0</flags>
+					<snmpRawValueType>0</snmpRawValueType>
+					<snmpPort>0</snmpPort>
+					<instanceDiscoveryMethod>3</instanceDiscoveryMethod>
+					<transformation></transformation>
+					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
+					<instanceDiscoveryData>.1.3.6.1.4.1.9.9.10.1.1.2.1.5</instanceDiscoveryData>
+					<instanceFilter>snmp = CreateSNMPTransport($node);&#x0D;&#x0A;if (snmp == NULL) {&#x0D;&#x0A;&#x09;trace(0,&quot;Err Can&apos;t create snmp transport at &quot;.$node-&gt;name);&#x0D;&#x0A;} else {&#x0D;&#x0A;&#x09;partName = SNMPGetValue(snmp,&quot;.1.3.6.1.4.1.9.9.10.1.1.4.1.1.10.1.&quot;.$1);&#x0D;&#x0A;&#x09;if(partName != NULL &amp;&amp; typeof(partName)==&quot;string&quot;)&#x0D;&#x0A;&#x09;{&#x0D;&#x0A;&#x09;&#x09;&#x09;return %(TRUE,$1,partName);&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;}&#x0D;&#x0A;return FALSE;</instanceFilter>
+				</dci>
+				<dci id="1876">
+					<guid>62fa8769-3b86-4689-8534-b29a3f6e1876</guid>
+					<name>.1.3.6.1.4.1.9.9.10.1.1.4.1.1.13.1.{instance}</name>
+					<description>Disk space total ({instance-name}), b</description>
+					<dataType>3</dataType>
+					<samples>0</samples>
+					<origin>2</origin>
+					<interval>0</interval>
+					<retention>0</retention>
+					<instance></instance>
+					<systemTag></systemTag>
+					<delta>0</delta>
+					<flags>0</flags>
+					<snmpRawValueType>0</snmpRawValueType>
+					<snmpPort>0</snmpPort>
+					<instanceDiscoveryMethod>3</instanceDiscoveryMethod>
+					<transformation></transformation>
+					<perfTabSettings>&lt;config&gt;&#x0A;   &lt;enabled&gt;false&lt;/enabled&gt;&#x0A;   &lt;autoScale&gt;true&lt;/autoScale&gt;&#x0A;   &lt;logScaleEnabled&gt;false&lt;/logScaleEnabled&gt;&#x0A;   &lt;minYScaleValue&gt;1&lt;/minYScaleValue&gt;&#x0A;   &lt;maxYScaleValue&gt;100&lt;/maxYScaleValue&gt;&#x0A;   &lt;timeRange&gt;1&lt;/timeRange&gt;&#x0A;   &lt;timeUnits&gt;1&lt;/timeUnits&gt;&#x0A;   &lt;type&gt;0&lt;/type&gt;&#x0A;   &lt;color&gt;49152&lt;/color&gt;&#x0A;   &lt;title&gt;&lt;/title&gt;&#x0A;   &lt;name&gt;&lt;/name&gt;&#x0A;   &lt;showThresholds&gt;false&lt;/showThresholds&gt;&#x0A;   &lt;parentDciId&gt;0&lt;/parentDciId&gt;&#x0A;   &lt;order&gt;100&lt;/order&gt;&#x0A;&lt;/config&gt;</perfTabSettings>
+					<instanceDiscoveryData>.1.3.6.1.4.1.9.9.10.1.1.2.1.5</instanceDiscoveryData>
+					<instanceFilter>snmp = CreateSNMPTransport($node);&#x0D;&#x0A;if (snmp == NULL) {&#x0D;&#x0A;&#x09;trace(0,&quot;Err Can&apos;t create snmp transport at &quot;.$node-&gt;name);&#x0D;&#x0A;} else {&#x0D;&#x0A;&#x09;partName = SNMPGetValue(snmp,&quot;.1.3.6.1.4.1.9.9.10.1.1.4.1.1.10.1.&quot;.$1);&#x0D;&#x0A;&#x09;if(partName != NULL &amp;&amp; typeof(partName)==&quot;string&quot;)&#x0D;&#x0A;&#x09;{&#x0D;&#x0A;&#x09;&#x09;&#x09;return %(TRUE,$1,partName);&#x0D;&#x0A;&#x09;}&#x0D;&#x0A;}&#x0D;&#x0A;return FALSE;</instanceFilter>
 				</dci>
 			</dataCollection>
 			<filter>return (&#x0D;&#x0A;&#x09;($node-&gt;isSNMP) &amp;&amp;&#x0D;&#x0A;&#x09;($node-&gt;sysDescription ~= &quot;Cisco IOS.*LINUX&quot;)&#x0D;&#x0A;);</filter>
